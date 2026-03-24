@@ -1,119 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        /* Base styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    :root {
+      --stormy: #494E6B;
+      --cloud: #98878F;
+      --sunset: #985E6D;
+      --evening: #192231;
+    }
 
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 10px;
-        }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, var(--evening), var(--stormy));
+      color: white;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.2);
+    }
 
-        h1, h2 {
-            margin-top: 0;
-        }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      letter-spacing: 1px;
+    }
 
-        ul {
-            padding-left: 20px;
-        }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(73, 78, 107, 0.85);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
 
-        .project {
-            background: #fafafa;
-            padding: 15px;
-            border-left: 4px solid #333;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
+    h2 {
+      border-bottom: 2px solid var(--sunset);
+      padding-bottom: 5px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-            color: #777;
-        }
+    p {
+      color: #eee;
+    }
 
-        /* Responsive styles */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 24px;
-            }
+    ul {
+      padding-left: 20px;
+    }
 
-            .container {
-                margin: 10px;
-                padding: 15px;
-            }
+    li {
+      margin-bottom: 6px;
+    }
 
-            h2 {
-                font-size: 20px;
-            }
+    .project {
+      background: var(--cloud);
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 10px;
+      border-left: 5px solid var(--sunset);
+    }
 
-            p, li {
-                font-size: 14px;
-            }
+    .project h3 {
+      margin-top: 0;
+    }
 
-            .project {
-                padding: 10px;
-            }
-        }
-    </style>
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: var(--sunset);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #b06a7a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: var(--cloud);
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      .container {
+        margin: 10px;
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p, li {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Your Name Here</h1>
+  <h1>Your Name Here</h1>
 </header>
 
 <div class="container">
-    <section>
-        <h2>About Me</h2>
-        <p>
-            Write a short bio about yourself here. For example: I am a beginner web developer who enjoys creating simple and clean websites.
-        </p>
-    </section>
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Write a short bio about yourself here. For example: I am a beginner web developer who enjoys creating simple and clean websites.
+    </p>
+  </section>
 
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-        </ul>
-    </section>
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </section>
 
-    <section>
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>My First Project</h3>
-            <p>
-                Describe your project here. For example: A simple website I built to practice HTML and CSS.
-            </p>
-        </div>
-    </section>
+  <section>
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>My First Project</h3>
+      <p>
+        Describe your project here. For example: A simple website I built to practice HTML and CSS.
+      </p>
+      <a href="#" class="btn">View Project</a>
+    </div>
+  </section>
 </div>
 
 <footer>
-    <p>© 2026 Your Name</p>
+  <p>© 2026 Your Name</p>
 </footer>
 
 </body>
