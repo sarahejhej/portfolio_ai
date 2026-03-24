@@ -16,58 +16,84 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, var(--evening), var(--stormy));
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
     }
 
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background: rgba(0,0,0,0.2);
+    /* App container */
+    .app {
+      width: 90%;
+      max-width: 900px;
+      height: 90vh;
+      background: rgba(25, 34, 49, 0.9);
+      border-radius: 20px;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-      letter-spacing: 1px;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: rgba(73, 78, 107, 0.9);
       padding: 20px;
-      background: rgba(73, 78, 107, 0.85);
-      backdrop-filter: blur(8px);
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .nav a:hover {
+      background: var(--sunset);
+    }
+
+    /* Main content */
+    .main {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .card {
+      background: rgba(152, 135, 143, 0.15);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
     h2 {
+      margin-top: 0;
       border-bottom: 2px solid var(--sunset);
       padding-bottom: 5px;
-    }
-
-    p {
-      color: #eee;
     }
 
     ul {
       padding-left: 20px;
     }
 
-    li {
-      margin-bottom: 6px;
-    }
-
     .project {
-      background: var(--cloud);
+      background: rgba(152, 135, 143, 0.3);
       padding: 15px;
-      margin-top: 15px;
       border-radius: 10px;
-      border-left: 5px solid var(--sunset);
-    }
-
-    .project h3 {
-      margin-top: 0;
+      border-left: 4px solid var(--sunset);
     }
 
     .btn {
@@ -85,71 +111,66 @@
       background: #b06a7a;
     }
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      color: var(--cloud);
-    }
-
     /* Mobile */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 26px;
+    @media (max-width: 700px) {
+      .app {
+        flex-direction: column;
+        height: auto;
       }
 
-      .container {
-        margin: 10px;
-        padding: 15px;
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
       }
 
-      h2 {
-        font-size: 20px;
-      }
-
-      p, li {
-        font-size: 14px;
+      .main {
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Your Name Here</h1>
-</header>
-
-<div class="container">
-  <section>
-    <h2>About Me</h2>
-    <p>
-      Write a short bio about yourself here. For example: I am a beginner web developer who enjoys creating simple and clean websites.
-    </p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>My First Project</h3>
-      <p>
-        Describe your project here. For example: A simple website I built to practice HTML and CSS.
-      </p>
-      <a href="#" class="btn">View Project</a>
+<div class="app">
+  <div class="sidebar">
+    <h1>Your Name</h1>
+    <div class="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
     </div>
-  </section>
-</div>
+  </div>
 
-<footer>
-  <p>© 2026 Your Name</p>
-</footer>
+  <div class="main">
+    <div class="card" id="about">
+      <h2>About Me</h2>
+      <p>
+        Write a short bio about yourself here. For example: I am a beginner web developer who enjoys creating clean, modern interfaces.
+      </p>
+    </div>
+
+    <div class="card" id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </div>
+
+    <div class="card" id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>My First Project</h3>
+        <p>
+          Describe your project here. For example: A simple website I built to practice HTML and CSS.
+        </p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
